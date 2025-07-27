@@ -1,115 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meesho Login</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #ffc0cb, #ffe6f0);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #ffc0cb, #ffb6c1); /* Pinky background */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
 
-    .login-container {
-      background: white;
-      width: 350px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
+        .login-container h2 {
+            text-align: center;
+            color: #e91e63;
+            margin-bottom: 25px;
+        }
 
-    .login-container h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #d1006b;
-    }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    .form-group {
-      margin-bottom: 15px;
-    }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #333;
+        }
 
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            transition: border 0.3s;
+        }
 
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+        input:focus {
+            border-color: #e91e63;
+        }
 
-    .login-btn {
-      background: #d1006b;
-      color: white;
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+        .login-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #e91e63;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
 
-    .login-btn:hover {
-      background: #a30056;
-    }
+        .login-btn:hover {
+            background-color: #d81b60;
+        }
 
-    .options {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 14px;
-    }
+        .extra-links {
+            text-align: center;
+            margin-top: 15px;
+        }
 
-    .options a {
-      color: #d1006b;
-      text-decoration: none;
-    }
+        .extra-links a {
+            color: #e91e63;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
 
-    .signup {
-      margin-top: 10px;
-      font-size: 13px;
-    }
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
 
-    @media (max-width: 400px) {
-      .login-container {
-        width: 90%;
-        padding: 20px;
-      }
-    }
-  </style>
+        @media screen and (max-width: 500px) {
+            .login-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="login-container" >
-    <h2>Login to Meesho</h2>
-    <form action="pages/index.html" method="get">
-      <div class="form-group">
-        <label for="email">Mobile Number or Email</label>
-        <input type="text" id="email" name="email" placeholder="Enter mobile/email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required>
-      </div>
-      <button type="submit" class="login-btn">Login</button>
-    </form>
-    <div class="options">
-      <p><a href="#">Forgot Password?</a></p>
-      <p class="signup">New to Meesho? <a href="#">Sign Up</a></p>
+    <div class="login-container">
+        <h2>Login to Meesho</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Mobile Number or Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter mobile/email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+    
+            <a href="index.html" class="login-btn">Login</a>
+        </form>
+        <div class="extra-links">
+            <a href="#">Forgot Password?</a> |
+            <a href="#">Sign Up</a>
+        </div>
     </div>
-  </div>
 </body>
 </html>
