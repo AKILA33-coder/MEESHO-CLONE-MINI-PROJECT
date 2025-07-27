@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+
+</head>
+    <style>
+
+.sort-box, .filter-box {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.sort-box {
+  width: 258px;
+}
+
+.filter-box {
+  width: 260px;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+  margin-left: 66px;
+}
+
+.filter-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+details {
+  margin-top: 15px;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      height: 100%;
+    }
+    .product-card img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 10px 0 5px;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .free-delivery {
+      color: green;
+      font-size: 14px;
+    }
+    .rating {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #333;
+      background: #e6f4ea;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 15px;
+    }
+
+
+input[type="text"] {
+  width: 95%;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+a {
+  color: purple;
+  text-decoration: none;
+  font-size: 14px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+    </style>
+    <body style="padding-top: 120px;overflow-x: hidden;">
+  <div style="position: fixed; top: 0; width: 100%; z-index: 999; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
+  <div class="alert alert-secondary mb-0" style="height: 51px;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">CATEGORIES</a>
+        </li>
+      </ul>
+      
+    
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link active" href="#home">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop">SHOP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pages">PAGES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#brands">BRANDS</a></li>
+      </ul>
+      
+    
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#">SELL ON MARKETKIT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">TRACK YOUR ORDER</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">US DOLLAR</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container-fluid py-2" style="background-color: #fff;">
+    <div class="row align-items-center">
+      
+   
+      <div class="col-2">
+        <img src="C:\Users\USER\Documents\bootstrap\meeshoLogo.svg" alt="Logo" style="width: 130px;">
+      </div>
+      
+     
+      <div class="col-6">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      
+     
+      <div class="col-4 d-flex justify-content-end align-items-center gap-4">
+        <i class="bi bi-cart4 fs-5"></i>
+        <i class="bi bi-heart fs-5"></i>
+        <a href="index.html" class="nav-link d-flex align-items-center">
+          <i class="bi bi-person fs-5"></i>&nbsp;LOGIN
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="home">
+<img src="https://images.meesho.com/images/marketing/1746425994914.webp" class="img-fluid" alt="..."style="
+    width: 1526px;
+    height: 340px;
+">
+<h2 style="
+    color: white;
+    font-size: 3rem;
+    margin-left: 823px;
+    margin-top: -266px;
+    "> Smart Shopping<br>
+Trusted by Millions</h2>
+<button type="button" class="btn btn-light btn-lg" style="
+    margin-top: 32px;
+    margin-left: 1035px;
+">SHOP NOW</button>
+</section>
+<BR><br><br><br>
+ 
+<div class="container text-center" style="border-color: var(--bs-danger-border-subtle)!important; border: 1px solid pink;border-color: var(--bs-danger-border-subtle) !important;
+    border: 1px solid pink;
+    width: 1326px;
+    max-width: 1500px;
+    padding: 8px;
+    margin-top: -26px;">
+  <div class="row-2" style="display: flex;">
+    <div class="col col-lg">
+      <img style="
+    width: 25px;" src="returns.svg" alt="img">
+     7 Days Easy Return
+    </div>
+    <div class="col">
+      <img style="
+    width: 25px;" src="cash.svg" alt="img">
+    Cash on Delivery
+    </div>
+    <div class="col">
+      <img style="
+    width: 25px;" src="lowest-price.svg" alt="img">
+   Lowest Prices
+    </div>
+  </div>
+</div>
+ <div id="shop">
+<div style="display: flex;">
+<img  src="https://images.meesho.com/images/marketing/1744634654837.webp" alt="img" style="padding: 71px;">
+<img src="https://images.meesho.com/images/marketing/1744634725496.webp" alt="img" style="height: 151px; margin-top: 67px;">
+<img src="https://images.meesho.com/images/marketing/1744634780426.webp" alt="img" style="margin-left: 63px; margin-top: 67px; height: 151px;">
+<img src="https://images.meesho.com/images/marketing/1744634814643.webp" alt="img" style="margin-left: 32px;margin-top: 56px;height: 162px;">
+<img src="https://images.meesho.com/images/marketing/1744634835018.webp" alt="img" style="margin-left: 44px;margin-top: 59px; height: 157px;">
+<img src="https://images.meesho.com/images/marketing/1744634871107.webp" alt="img" style="margin-left: 48px; height: 159px; margin-top: 56px;">
+
+</div>
+<div style="display: flex;">
+<div style="margin-left: 91px;font-family: cursive;margin-top: -62px; font-size: larger;">Ethnic wear</div>
+<div style="margin-left: 91px;font-family: cursive;margin-top: -62px; font-size: larger;">Western Dresses</div>
+<div style="margin-left: 91px;font-family: cursive;margin-top: -62px; font-size: larger;">Menswear</div>
+<div style="margin-left: 119px;font-family: cursive;margin-top: -62px; font-size: larger;">Footwear</div>
+<div style="margin-left: 112px;font-family: cursive;margin-top: -62px; font-size: larger;">Home Decor</div>
+<div style="margin-left: 133px;font-family: cursive;margin-top: -62px; font-size: larger;">Beauty</div>
+</div>
+</div>
+<div id="pages">
+  <img src="https://images.meesho.com/images/marketing/1744698265981.webp" alt="img" style=" width: 100%; height: 429px;">
+ <button type="button" class="btn btn-outline-warning" style="border: 1px solid rgb(255, 209, 130); margin-left: 249px; height: 54px;width: 167px; margin-top: -162px;">SHOP NOW</button>
+ </div>
+
+
+ <div style="        margin-top: -416px;
+    margin-left: 773px;
+    display: flex
+;
+    gap: 106px;">
+  <a href="#"><img src="https://images.meesho.com/images/marketing/1744722796811.webp" alt="img" style="height: 171px;"></a>
+<a href="#"><img src="https://images.meesho.com/images/marketing/1744635113661.webp" alt="img" style="height: 171px;"></a>
+ </div>
+<div style="   display: flex
+; margin-left: 773px;
+    gap: 106px;">
+ <a href="#"><img src="https://images.meesho.com/images/marketing/1744635139351.webp" alt="img" style="height: 171px;"></a>
+ <a href="#"><img src="https://images.meesho.com/images/marketing/1744635189897.webp" alt="img" style="height: 171px;"></a>
+</div>
+
+<div id="brands">
+<h1 style="
+    margin-left: 126px;
+    margin-top: 80px;
+">Original Brands</h1>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHgL-0y49ky9qfObGNOztcmRPsvUfwgW0I6DYmqO5f14NeWEg" alt="img" style="
+    margin-left: 418px;
+    width: 41px;
+    margin-top: -88px;
+">
+
+<a style="
+    color: rgb(159, 32, 137);
+    font-size: 22px;    margin-top: -71px;
+    margin-left: 1210px;
+    font-weight: 500;
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+" href="#">VIEW ALL ></a>
+</div>
+
+<div style="margin-top: 49px;display: flex;justify-content: space-evenly;">
+  <a href="#"><img src="https://images.meesho.com/images/marketing/1744635542873.webp" alt="img"></a>
+   <a href="#"><img src="https://images.meesho.com/images/marketing/1744635521751.webp" alt="img"></a>
+    <a href="#"><img src="https://images.meesho.com/images/marketing/1744635497001.webp" alt="img"></a>
+    <a href="#"><img src="https://images.meesho.com/images/marketing/1744635464683.webp" alt="img"></a>
+   <a href="#"><img src="https://images.meesho.com/images/marketing/1744635432891.webp" alt="img"></a>   
+</div>
+
+<div>
+  <img src="https://images.meesho.com/images/marketing/1744698143534.webp" alt="img" style="  margin-top: 18px;">
+  <button type="button" class="btn btn-light btn-lg" style="
+    color: mediumvioletred;
+    margin-top: -320px;
+    margin-left: 77px;
+">SHOP NOW</button>
+<div style=" display: flex;margin-left: 482px; margin-top: -350px;justify-content: space-evenly;">
+  <img src="https://images.meesho.com/images/marketing/1744635893307.webp" alt="img" style=" height: 206px;">
+  <img src="https://images.meesho.com/images/marketing/1744635812270.webp" alt="img" style=" height: 206px;">
+  <img src="https://images.meesho.com/images/marketing/1744635870215.webp" alt="img" style="height: 206px;">
+  <img src="https://images.meesho.com/images/marketing/1744635846873.webp" alt="img" style="height: 206px;">
+</div>
+<div>
+ <a href="#"><button type="button" class="btn btn-light btn-lg" style=" color: mediumvioletred; margin-top: 22px;margin-left: 533px; border-radius: 21px;">Summer Dresses</button></a> 
+ <a href="#"><button type="button" class="btn btn-light btn-lg" style="color: mediumvioletred;margin-top: -77px;margin-left: 739px;border-radius: 21px;">Baggy Jeans</button></a>
+  <a href="#"><button type="button" class="btn btn-light btn-lg" style="color: mediumvioletred;margin-top: -124px;margin-left: 942px;border-radius: 21px;">Earrings</button></a>
+  <a href="#"> <button type="button" class="btn btn-light btn-lg" style="color: mediumvioletred;margin-top: -176px;margin-left: 1139px;border-radius: 21px;">Chic flats</button></a>
+</div>
+</div>
+
+
+  <h1 style="padding: 30px;font-family: serif;font-size: 34px;">PRODUCTS FOR YOU</h1>
+
+
+  <div  style="width: 369px;background-color: white;padding: 20px;border: 1px solid #ddd;border-radius: 10px;box-shadow: 0 2px 10px rgba(0,0,0,0.05);margin-left: 26px;">
+
+   
+    <h3 style="margin-bottom: 10px; font-size: 18px; color: #333;">FILTERS</h3>
+    <p style="font-size: 13px; color: #777;">1000+ Products</p>
+
+ 
+    <div style="margin-top: 20px;">
+      <h4 style="font-size: 16px; margin-bottom: 10px; color: #333;">Category</h4>
+      <input type="text" placeholder="Search" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 15px; font-size: 14px;">
+
+      <div style="font-size: 14px; color: #333; line-height: 1.8;">
+        <label><input type="checkbox" style="margin-right: 8px;">Women T-shirts</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Women Tops And Tunics</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Analog Watches</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Bangles & Bracelets</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Bedsheets</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Bike Covers</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Bluetooth Headphones</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Boxes, Baskets & Bins</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Dresses</label><br>
+        <label><input type="checkbox" style="margin-right: 8px;">Dupatta Sets</label><br>
+        <a href="#" style="color: #9c27b0; font-weight: bold; display: inline-block; margin-top: 8px;text-decoration: underline;">Show More</a>
+      </div>
+    </div>
+
+    
+    <div style="margin-top: 30px;">
+      <h4 style="font-size: 16px; margin-bottom: 10px; color: #333;">Gender</h4>
+      <div style="font-size: 14px; color: #333;">
+        <label style="display: inline-block; margin-right: 10px;"><input type="radio" name="gender" style="margin-right: 5px;">Boys</label>
+        <label style="display: inline-block; margin-right: 10px;"><input type="radio" name="gender" style="margin-right: 5px;">Girls</label>
+        <label style="display: inline-block; margin-right: 10px;"><input type="radio" name="gender" style="margin-right: 5px;">Men</label>
+        <label style="display: inline-block; margin-right: 10px;"><input type="radio" name="gender" style="margin-right: 5px;">Women</label>
+      </div>
+    </div>
+
+  </div>
+
+    <div style="
+    margin-top: -730px;
+">
+      <div class="container mt-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+      <div class="card-group" style="
+      width: 855px;
+      margin-top: -312px;
+      margin-left: 397px;
+      display: flex;
+      gap: 29px;      padding: 40px;
+
+  ">
+        <div class="card">
+          <a href="p1.html"><img src="https://images.meesho.com/images/products/387169378/ory9k_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+            <div class="card-body">
+           <div class="product-title">Princess Stylish Boys Top & Bottom Sets</div>
+        <div class="price">₹450</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+         
+        </div>
+        <div class="card">
+          <a href="p2.html"><img src="https://images.meesho.com/images/products/426104263/sbr9f_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+            <div class="card-body">
+           <div class="product-title">Trendy Women TShirts</div>
+        <div class="price">₹450</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          
+        </div>
+        <div class="card">
+          <a href="p3.html"><img src="https://images.meesho.com/images/products/417089259/uimrg_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+            <div class="card-body">
+           <div class="product-title">Mobile cover</div>
+        <div class="price">₹650</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          
+        </div> 
+      </div>
+      <div class="card-group" style="
+      width: 855px;
+      margin-top: -35px;
+      margin-left: 397px;
+      display: flex;
+      gap: 29px;      padding: 40px;
+
+  ">
+        <div class="card">
+          <a href="p4.html"><img src="https://images.meesho.com/images/products/375061729/0lurd_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+          <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Trendy Retro Men Shirts</div>
+        <div class="price">₹450</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          
+        </div>
+        <div class="card">
+          <a href="p5.html"><img src="https://images.meesho.com/images/products/555458715/eys4t_400.webp" class="card-img-top" alt="..." style="height: 200px;cursor: pointer;">
+          </a>
+          <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Aishani Fabulous Sarees</div>
+        <div class="price">₹950</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.5 </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="p6.html"><img src="https://images.meesho.com/images/products/558771746/3xes9_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+         </a>
+            <div class="card-body">
+               <div class="product-title">Stylish Boys Top & Bottom Sets</div>
+        <div class="price">₹950</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+  <div style="
+    margin-left: 85px;
+">
+   <div class="card-group" style="
+      width: 855px;
+      margin-top: -35px;
+      margin-left: 420px;
+      display: flex;
+      gap: 29px;      padding: 40px;
+
+  ">
+        <div class="card">
+         <a href="p7.html"><img src="https://images.meesho.com/images/products/552015067/2lf7n_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+        </a>
+        <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Trendy Retro Men Shirts</div>
+        <div class="price">₹350</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          
+        </div>
+        <div class="card">
+          <a href="p8.html"><img src="https://images.meesho.com/images/products/552890837/tiadw_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+          <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Aishani Fabulous Sarees</div>
+        <div class="price">₹1050</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.5 </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="p9.html"><img src="https://images.meesho.com/images/products/555709817/nuy5q_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+         </a>
+            <div class="card-body">
+               <div class="product-title">Stylish Boys Top & Bottom Sets</div>
+        <div class="price">₹950</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.2 </div>
+          </div>
+          </div>
+            
+        </div>
+      </div>
+      <div class="card-group" style="
+      left: 25px;
+      position: relative;
+      width: 855px;
+      margin-top: -35px;
+      display: flex;
+      gap: 29px;
+      padding: 40px;
+      margin-left: 480px;
+">
+        <div class="card">
+         <a href="p4.html"><img src="https://images.meesho.com/images/products/375061729/0lurd_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+         </a> 
+         <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Trendy Retro Men Shirts</div>
+        <div class="price">₹450</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.0 </div>
+          </div>
+          
+        </div>
+        <div class="card">
+          <nav>
+         <a href="p5.html"><img src="https://images.meesho.com/images/products/555458715/eys4t_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+         </a>
+         <div class="card-body" style="
+          height: 148px;
+      ">
+            <div class="product-title">Aishani Fabulous Sarees</div>
+        <div class="price">₹250</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 3.5 </div>
+          </div>
+        </div>
+       
+        <div class="card">
+          <a href="p12.html"><img src="https://images.meesho.com/images/products/459469511/zkbqc_400.webp" class="card-img-top" alt="..." style="height: 200px;">
+          </a>
+            <div class="card-body">
+               <div class="product-title">Stylish Boys Top & Bottom Sets</div>
+        <div class="price">₹550</div>
+        <div class="free-delivery">Delivery ₹71</div>
+        <div class="rating">⭐ 4.6 </div>
+          </div>
+          </div>
+            </ul>
+        </div>
+      </div>
+    </div></div> </div>
+    </div></div> </div>
+</nav>
+
+<div style="background-color: #f1f3f6; padding: 40px 20px; font-family: Arial, sans-serif; color: #333;">
+
+  <div style="max-width: 1200px; margin: auto;">
+
+    <div style="text-align: left;">
+
+    
+      <div style="width: 23%; display: inline-block; vertical-align: top; margin: 10px;">
+        <h4 style="margin-bottom: 10px;">Shop Non-Stop on Meesho</h4>
+        <p style="font-size: 14px; color: #555;">Trusted by 50M+ Indians. Cash on Delivery | Free Delivery</p>
+        <img src="https://images.meesho.com/images/pow/playstore-icon-big.png" alt="Play Store" style="width: 140px; margin-top: 10px;">
+      </div>
+
+    
+      <div style="width: 23%; display: inline-block; vertical-align: top; margin: 10px;">
+        <h4 style="margin-bottom: 10px;">Useful Links</h4>
+        <p style="font-size: 14px; color: #555;">Careers</p>
+        <p style="font-size: 14px; color: #555;">Become a Supplier</p>
+        <p style="font-size: 14px; color: #555;">Hall of Fame</p>
+      </div>
+
+      <div style="width: 23%; display: inline-block; vertical-align: top; margin: 10px;">
+        <h4 style="margin-bottom: 10px;">Customer Policies</h4>
+        <p style="font-size: 14px; color: #555;">Privacy Policy</p>
+        <p style="font-size: 14px; color: #555;">Terms & Conditions</p>
+        <p style="font-size: 14px; color: #555;">Returns & Refunds</p>
+      </div>
+
+      <div style="width: 23%; display: inline-block; vertical-align: top; margin: 10px;">
+        <h4 style="margin-bottom: 10px;">Reach out to us</h4>
+        <p style="font-size: 14px; color: #555;">support@meesho.com</p>
+        <p style="font-size: 14px; color: #555;">Contact No: 080-XXXX XXXX</p>
+
+
+        <div style="margin-top: 10px;">
+          <a href="https://www.facebook.com" target="_blank" style="margin-right: 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="24" style="vertical-align: middle;">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="24" style="vertical-align: middle;">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div style="margin: 30px 0; border-color: #ddd;">
+    <p style="text-align: center; font-size: 13px; color: #888;">
+      @ 2025 Meesho. All Rights Reserved.
+    </p>
+  </div>
+</div>
+
+   
+
+    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</body>
+</html>
